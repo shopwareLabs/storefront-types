@@ -26,7 +26,8 @@ jobs:
           cp package.new.json package.json
           rm package.new.json
 
+      - name: Update npm
+        run: npm install -g npm@latest
+
       - name: Release package
         run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
