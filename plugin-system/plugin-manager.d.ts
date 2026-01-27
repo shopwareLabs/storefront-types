@@ -16,6 +16,12 @@ export default interface PluginManager {
     extend(fromName: String, newName: string, pluginClass: Object, selector: String | NodeList | HTMLElement, options?: Object): boolean
 
     /**
+     * Overrides an existing plugin with a new class.
+     * This is a convenience wrapper around extend() that uses the same name for both fromName and newName.
+     */
+    override(overrideName: String, pluginClass: Object, selector: String | NodeList | HTMLElement, options?: Object): boolean
+
+    /**
      * Returns a list of all registered plugins.
      */
     getPluginList(): string[]
