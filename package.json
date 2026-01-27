@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "Provides Shopware Storefront Typescript types",
   "types": "index.d.ts",
+  "scripts": {
+    "test": "tsc --project tsconfig.test.json"
+  },
   "dependencies": {
     "@types/bootstrap": "^5.2.0"
   },

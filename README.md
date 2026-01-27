@@ -23,3 +23,29 @@ To have the types active, you need to create a `tsconfig.json` (`src/Resources/a
     }
 }
 ```
+
+## Typed Plugin Options
+
+You can use a generic type parameter to get fully typed options in your plugins:
+
+```ts
+const { PluginBaseClass } = window;
+
+interface MyPluginOptions {
+    option1: string;
+    option2: number | null;
+}
+
+export default class MyPlugin extends PluginBaseClass<MyPluginOptions> {
+    static options: MyPluginOptions = {
+        option1: 'default value',
+        option2: null
+    };
+
+    init() {
+        // this.options is fully typed
+        console.log(this.options.option1); // string
+        console.log(this.options.option2); // number | null
+    }
+}
+```
