@@ -31,7 +31,7 @@ const defaultOpt: unknown = defaultPlugin.options['anyKey'];
 const defaultInitOpt: unknown = defaultPlugin.initialOptions['anyKey'];
 
 // Test: Constructor options parameter should accept Partial<Options>
-declare const PluginClass: PluginBaseClass<MyPluginOptions>;
+declare const PluginClass: new (el: HTMLElement, options?: Partial<MyPluginOptions>, pluginName?: false | string) => PluginBaseClass<MyPluginOptions>;
 declare const element: HTMLElement;
 const instance = new PluginClass(element, { option1: 'partial' });
 const instanceNoOpts = new PluginClass(element);

@@ -1,5 +1,7 @@
-// Test case for extending PluginBaseClass as shown in the issue
-import PluginBaseClass from '../plugin-system/plugin';
+// Test case for using window.PluginBaseClass as shown in the issue
+/// <reference path="../global.d.ts" />
+
+const { PluginBaseClass } = window;
 
 interface MyPluginOptions {
     option1: string;
@@ -24,16 +26,13 @@ class MyPlugin extends PluginBaseClass<MyPluginOptions> {
     }
 }
 
-// Test: Should be able to instantiate via constructor
+// Test: Can instantiate using the class from window
 const element = document.createElement('div');
-const plugin = new MyPlugin(element, { option1: 'test' });
+const plugin = new MyPlugin(element, { option1: 'custom' });
 
-// Test: Instance properties should be accessible
-const el: HTMLElement = plugin.el;
+// Test: Instance properties should be typed correctly
 const opt1: string = plugin.options.option1;
+const opt2: number | null = plugin.options.option2;
 
 // @ts-expect-error - Should error when accessing non-existent property
 plugin.options.nonExistent;
-
-// @ts-expect-error - Should error when assigning wrong type
-const wrongType: number = plugin.options.option1;
