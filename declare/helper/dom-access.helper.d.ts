@@ -27,7 +27,7 @@ interface DomAccessHelper {
     /**
      * Returns the selected elements of a defined parent node
      */
-    querySelectorAll(element: HTMLElement, selector: string, strict?: boolean): HTMLElement[]
+    querySelectorAll(element: HTMLElement, selector: string, strict?: boolean): NodeList | false
 }
 
 declare module 'src/helper/dom-access.helper' {
