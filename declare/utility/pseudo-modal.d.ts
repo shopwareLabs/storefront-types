@@ -1,5 +1,5 @@
-declare module 'src/utility/modal-extension/psuedo-modal.util' {
-    class PsuedoModalUtil {
+declare module 'src/utility/modal-extension/pseudo-modal.util' {
+    class PseudoModalUtil {
         open(callback: Function): void
         close(): void
         getModal(): HTMLElement
@@ -7,5 +7,5 @@ declare module 'src/utility/modal-extension/psuedo-modal.util' {
         updateContent(content: string, callback: () => void): void
     }
 
-    export = PsuedoModalUtil;
+    export = PseudoModalUtil;
 }

@@ -1,5 +1,5 @@
 interface CookieStorageHelper {
-    setItem(key: string, value: string, expireationDays: number): void
+    setItem(key: string, value: string, expirationDays: number): void
 
     getItem(key: string): any
 
