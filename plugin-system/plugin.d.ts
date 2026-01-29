@@ -1,10 +1,10 @@
 import NativeEventEmitter from "./native-event-emitter";
 
-export default class PluginBaseClass<Options extends object = Record<string, unknown>> {
-    constructor(el: HTMLElement, options?: Partial<Options>, pluginName?: false | string);
+export default class PluginBaseClass<Options extends object = Record<string, unknown>, El extends HTMLElement = HTMLElement> {
+    constructor(el: El, options?: Partial<Options>, pluginName?: false | string);
 
-    el: HTMLElement;
-    $emitter: NativeEventEmitter;
+    el: El;
+    $emitter: NativeEventEmitter<El>;
     _pluginName: String;
     initialOptions: Options;
     options: Options;
