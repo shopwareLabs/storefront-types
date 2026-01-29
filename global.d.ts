@@ -1,7 +1,7 @@
 declare global {
     interface Window {
         PluginManager: import('./plugin-system/plugin-manager').default,
-        PluginBaseClass: import('./plugin-system/plugin').default,
+        PluginBaseClass: typeof import('./plugin-system/plugin').default,
         router: {
             'frontend.cart.offcanvas': string,
             'frontend.cookie.offcanvas': string,
