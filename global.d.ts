@@ -1,4 +1,12 @@
 declare global {
+    interface ValidationMessages {
+        required: string,
+        email: string,
+        confirmation: string,
+        minLength: string,
+        grecaptcha: string,
+    }
+
     interface Window {
         PluginManager: import('./plugin-system/plugin-manager').default,
         PluginBaseClass: typeof import('./plugin-system/plugin').default,
@@ -16,14 +24,7 @@ declare global {
         }
         bootstrap: typeof import('bootstrap')
         formValidation: import('./helper/form-validation').default,
-        validationMessages: {
-            required: string,
-            email: string,
-            confirmation: string,
-            minLength: string,
-            grecaptcha: string,
-            [key: string]: string,
-        }
+        validationMessages: ValidationMessages,
         useDefaultCookieConsent?: true
      }
 
