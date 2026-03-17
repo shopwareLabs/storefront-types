@@ -1,6 +1,7 @@
 /// <reference path="plugin-system/plugin.class.d.ts" />
 /// <reference path="plugin-system/plugin.manager.d.ts" />
 
+/// <reference path="helper/form-validation.helper.d.ts" />
 /// <reference path="helper/date.helper.d.ts" />
 /// <reference path="helper/debouncer.helper.d.ts" />
 /// <reference path="helper/device-detection.helper.d.ts" />
