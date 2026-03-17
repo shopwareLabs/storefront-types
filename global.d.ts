@@ -1,5 +1,5 @@
 declare global {
-    interface ValidationMessages {
+    interface ShopwareValidationMessages {
         required: string,
         email: string,
         confirmation: string,
@@ -7,24 +7,26 @@ declare global {
         grecaptcha: string,
     }
 
+    interface ShopwareRouter {
+        'frontend.cart.offcanvas': string,
+        'frontend.cookie.offcanvas': string,
+        'frontend.checkout.finish.page': string,
+        'frontend.checkout.info': string,
+        'frontend.menu.offcanvas': string,
+        'frontend.cms.page': string,
+        'frontend.cms.navigation.page': string,
+        'frontend.account.addressbook': string,
+        'frontend.country.country-data': string,
+        'frontend.app-system.generate-token': string,
+    }
+
     interface Window {
         PluginManager: import('./plugin-system/plugin-manager').default,
         PluginBaseClass: typeof import('./plugin-system/plugin').default,
-        router: {
-            'frontend.cart.offcanvas': string,
-            'frontend.cookie.offcanvas': string,
-            'frontend.checkout.finish.page': string,
-            'frontend.checkout.info': string,
-            'frontend.menu.offcanvas': string,
-            'frontend.cms.page': string,
-            'frontend.cms.navigation.page': string,
-            'frontend.account.addressbook': string,
-            'frontend.country.country-data': string,
-            'frontend.app-system.generate-token': string,
-        }
+        router: ShopwareRouter,
         bootstrap: typeof import('bootstrap')
         formValidation: import('./helper/form-validation').default,
-        validationMessages: ValidationMessages,
+        validationMessages: ShopwareValidationMessages,
         useDefaultCookieConsent?: true
      }
 
