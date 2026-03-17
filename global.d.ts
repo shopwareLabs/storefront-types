@@ -22,6 +22,7 @@ declare global {
             confirmation: string,
             minLength: string,
             grecaptcha: string,
+            [key: string]: string,
         }
         useDefaultCookieConsent?: true
      }
