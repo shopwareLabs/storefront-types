@@ -15,6 +15,15 @@ declare global {
             'frontend.app-system.generate-token': string,
         }
         bootstrap: typeof import('bootstrap')
+        formValidation: import('./helper/form-validation').default,
+        validationMessages: {
+            required: string,
+            email: string,
+            confirmation: string,
+            minLength: string,
+            grecaptcha: string,
+        }
+        useDefaultCookieConsent?: true
      }
 
     interface Document {
