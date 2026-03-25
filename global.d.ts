@@ -1,4 +1,11 @@
 declare global {
+    interface ShopwareGtagConfig {
+        anonymize_ip: string,
+        cookie_domain: string,
+        cookie_prefix: string,
+        page_location?: string,
+    }
+
     interface ShopwareValidationMessages {
         required: string,
         email: string,
@@ -29,6 +36,16 @@ declare global {
         validationMessages: ShopwareValidationMessages,
         useDefaultCookieConsent?: true,
         gtagActive?: boolean,
+        gtagURL?: string,
+        controllerName?: string,
+        actionName?: string,
+        activeRoute?: string,
+        activeRouteParameters?: string,
+        trackOrders?: string | boolean,
+        trackOffcanvasCart?: string | boolean,
+        gtagTrackingId?: string,
+        dataLayer?: unknown[],
+        gtagConfig?: ShopwareGtagConfig,
         googleReCaptchaV2Active?: boolean,
         googleReCaptchaV3Active?: boolean,
         themeJsPublicPath?: string,
