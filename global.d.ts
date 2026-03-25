@@ -27,7 +27,13 @@ declare global {
         bootstrap: typeof import('bootstrap')
         formValidation: import('./helper/form-validation').default,
         validationMessages: ShopwareValidationMessages,
-        useDefaultCookieConsent?: true
+        useDefaultCookieConsent?: true,
+        gtagActive?: boolean,
+        googleReCaptchaV2Active?: boolean,
+        googleReCaptchaV3Active?: boolean,
+        themeJsPublicPath?: string,
+        wishlistEnabled?: boolean,
+        customerLoggedInState?: 0 | 1,
      }
 
     interface Document {
